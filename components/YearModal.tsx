@@ -2,7 +2,7 @@
 
 import { useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { YearRanking, CHARACTER_EMOJI } from "@/data/rankings";
+import { YearRanking, CHARACTER_EMOJI, CHARACTER_BIOS } from "@/data/rankings";
 import SwipeCarousel from "./SwipeCarousel";
 
 export default function YearModal({
@@ -41,7 +41,7 @@ export default function YearModal({
           animate={{ scale: 1, opacity: 1, y: 0 }}
           exit={{ scale: 0.8, opacity: 0, y: 20 }}
           transition={{ type: "spring", stiffness: 300, damping: 25 }}
-          className="bg-white rounded-3xl shadow-2xl max-w-md w-full overflow-hidden border-2"
+          className="bg-white rounded-3xl shadow-2xl max-w-md w-full overflow-y-auto max-h-[90vh] border-2"
           style={{ borderColor: winner.color + "30" }}
           onClick={(e) => e.stopPropagation()}
         >
@@ -92,8 +92,40 @@ export default function YearModal({
             )}
           </div>
 
+          {/* Winner bio */}
+          {CHARACTER_BIOS[winner.name] && (
+            <div className="px-6 pt-2 pb-1">
+              <div
+                className="rounded-2xl p-4 text-sm leading-relaxed"
+                style={{ backgroundColor: winner.color + "08" }}
+              >
+                <div className="flex items-center gap-2 mb-2">
+                  <span className="text-xs">👑</span>
+                  <span
+                    className="font-extrabold"
+                    style={{ color: winner.color }}
+                  >
+                    {winner.name}
+                  </span>
+                  <span
+                    className="text-[10px] px-2 py-0.5 rounded-full font-bold"
+                    style={{
+                      backgroundColor: winner.color + "15",
+                      color: winner.color + "AA",
+                    }}
+                  >
+                    est. {CHARACTER_BIOS[winner.name].debut} · {CHARACTER_BIOS[winner.name].species}
+                  </span>
+                </div>
+                <p className="text-xs leading-relaxed" style={{ color: "#7A6B8A" }}>
+                  {CHARACTER_BIOS[winner.name].bio}
+                </p>
+              </div>
+            </div>
+          )}
+
           {/* Content */}
-          <div className="p-6">
+          <div className="p-6 pt-3">
             {data.rankings.length > 1 ? (
               <>
                 <p

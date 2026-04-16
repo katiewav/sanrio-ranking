@@ -16,8 +16,8 @@ export default function WinnersGrid() {
 
   return (
     <>
-      <div className="max-w-5xl mx-auto px-4 pb-16">
-        <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-8 gap-3">
+      <div className="max-w-6xl mx-auto px-4 pb-16">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-8 gap-4">
           {RANKINGS.map((yearData) => {
             const winner = yearData.rankings[0];
             const emoji = CHARACTER_EMOJI[winner.name] || "✨";
@@ -30,7 +30,7 @@ export default function WinnersGrid() {
               <button
                 key={yearData.year}
                 onClick={() => setSelectedYear(yearData)}
-                className="kawaii-card rounded-2xl p-3 flex flex-col items-center gap-1 border-2 cursor-pointer relative overflow-hidden group"
+                className="kawaii-card rounded-2xl p-4 flex flex-col items-center gap-1.5 border-2 cursor-pointer relative overflow-hidden group"
                 style={{
                   backgroundColor: pastel,
                   borderColor: winner.color + "40",
@@ -43,15 +43,15 @@ export default function WinnersGrid() {
 
                 {/* Character avatar */}
                 <div
-                  className="w-14 h-14 rounded-full flex items-center justify-center overflow-hidden"
+                  className="w-18 h-18 rounded-full flex items-center justify-center overflow-hidden"
                   style={{ backgroundColor: winner.color + "25" }}
                 >
                   {imgSrc ? (
                     <Image
                       src={imgSrc}
                       alt={winner.name}
-                      width={48}
-                      height={48}
+                      width={60}
+                      height={60}
                       className="object-contain"
                       onError={(e) => {
                         // Fallback to emoji if image doesn't exist
@@ -72,7 +72,7 @@ export default function WinnersGrid() {
 
                 {/* Year */}
                 <span
-                  className="text-lg font-extrabold"
+                  className="text-xl font-extrabold"
                   style={{ color: winner.color }}
                 >
                   {yearData.year}
@@ -80,7 +80,7 @@ export default function WinnersGrid() {
 
                 {/* Winner name */}
                 <span
-                  className="text-[10px] font-bold leading-tight text-center"
+                  className="text-xs font-bold leading-tight text-center"
                   style={{ color: winner.color + "CC" }}
                 >
                   {winner.name}
@@ -92,7 +92,7 @@ export default function WinnersGrid() {
                 {/* Top 5 indicator */}
                 {hasTop5 && (
                   <span
-                    className="text-[8px] font-bold uppercase tracking-wider px-1.5 py-0.5 rounded-full"
+                    className="text-[9px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full"
                     style={{
                       backgroundColor: winner.color + "20",
                       color: winner.color,

@@ -67,6 +67,75 @@ export const CHARACTER_EMOJI: Record<string, string> = {
   "Little Twin Stars": "⭐",
 };
 
+// Character bios
+export const CHARACTER_BIOS: Record<string, { debut: number; species: string; bio: string }> = {
+  "Hello Kitty": {
+    debut: 1974,
+    species: "White cat",
+    bio: "Born in London, Hello Kitty (Kitty White) is Sanrio's most iconic character. She's cheerful, kind, and loves baking cookies. With her signature red bow, she's become a global pop culture icon and the most decorated champion in ranking history with 15 wins.",
+  },
+  "Cinnamoroll": {
+    debut: 2001,
+    species: "White puppy",
+    bio: "A fluffy white puppy who floated down from the sky on a cloud. He was found on the rooftop of Cafe Cinnamon, where he now lives. His long ears let him fly, and his curly tail looks like a cinnamon roll. A modern fan favorite with 7 championship titles.",
+  },
+  "Pompompurin": {
+    debut: 1996,
+    species: "Golden retriever",
+    bio: "A soft, pudding-loving golden retriever who always wears his signature brown beret. He's a bit lazy and loves napping, but his gentle personality has won hearts worldwide. A 4-time champion who reclaimed the crown in 2025 after a 9-year gap.",
+  },
+  "My Melody": {
+    debut: 1975,
+    species: "White rabbit",
+    bio: "A sweet white rabbit from Mariland forest who always wears a pink or red hood. She's gentle, kind, and loves baking with her mom. One of Sanrio's longest-running characters and a consistent top performer in the rankings.",
+  },
+  "Kuromi": {
+    debut: 2005,
+    species: "White rabbit",
+    bio: "My Melody's self-proclaimed rival who wears a black jester's hat with a pink skull. Despite her punk rock look, she's actually a hopeless romantic who loves writing in her diary. Her edgy-cute appeal has made her a fan favorite in recent years.",
+  },
+  "Pochacco": {
+    debut: 1989,
+    species: "White dog",
+    bio: "An adventurous, sporty white dog with floppy black ears. He's curious, playful, and loves long walks. A '90s icon who dominated the rankings with 5 consecutive wins (1991-1995) and has made a remarkable comeback in recent years.",
+  },
+  "Bad Badtz-Maru": {
+    debut: 1993,
+    species: "Penguin",
+    bio: "A mischievous penguin with spiky hair who dreams of being the boss of everything. He's sarcastic and a bit cranky, but has a heart of gold. He broke Pochacco's winning streak in 1996 to claim the crown.",
+  },
+  "Keroppi": {
+    debut: 1988,
+    species: "Frog",
+    bio: "A cheerful, adventurous frog from Donut Pond. Known for his big eyes and wide smile, he loves swimming and exploring. He was one of the early ranking champions, winning in 1990.",
+  },
+  "Minna no Tabo": {
+    debut: 1988,
+    species: "Human boy",
+    bio: "A lovable, easygoing boy who's a bit of a dreamer. He's not the brightest, but his kind heart and optimistic nature make everyone love him. He won back-to-back in the ranking's earliest years (1988-1989).",
+  },
+  "Marron Cream": {
+    debut: 1985,
+    species: "White lamb",
+    bio: "A fluffy little lamb who's stylish and loves fashion. Born in France, she's elegant and a bit shy. She was the champion of the 2nd annual ranking in 1987, during Sanrio's early golden era.",
+  },
+  "Zashikibuta": {
+    debut: 1986,
+    species: "Pig",
+    bio: "A round, cheerful pig who loves lounging around the house. The very first champion of the Sanrio Character Ranking in 1986, making history as the inaugural winner.",
+  },
+  "Gudetama": {
+    debut: 2013,
+    species: "Egg",
+    bio: "A lazy, unmotivated egg yolk who finds everything to be too much effort. Despite — or because of — this relatable attitude, Gudetama became a viral sensation and a consistent top-10 performer in the rankings.",
+  },
+  "Little Twin Stars": {
+    debut: 1975,
+    species: "Star siblings",
+    bio: "Kiki and Lala are twin stars who came down from the sky. Kiki (boy, blue) is curious and brave; Lala (girl, pink) is gentle and a bit of a crybaby. Together they spread magic and wonder wherever they go.",
+  },
+};
+
 // Pastel versions of character colors for card backgrounds
 export const CHARACTER_PASTELS: Record<string, string> = {
   "Hello Kitty": "#FFE0E8",
