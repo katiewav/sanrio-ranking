@@ -2,7 +2,7 @@
 
 import { useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { YearRanking, CHARACTER_EMOJI, CHARACTER_BIOS } from "@/data/rankings";
+import { YearRanking, CHARACTER_BIOS } from "@/data/rankings";
 import SwipeCarousel from "./SwipeCarousel";
 
 export default function YearModal({
@@ -13,7 +13,6 @@ export default function YearModal({
   onClose: () => void;
 }) {
   const winner = data.rankings[0];
-  const emoji = CHARACTER_EMOJI[winner.name] || "✨";
 
   useEffect(() => {
     const handleEsc = (e: KeyboardEvent) => {
@@ -33,7 +32,8 @@ export default function YearModal({
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
-        className="fixed inset-0 z-50 flex items-center justify-center p-4 modal-backdrop"
+        className="fixed inset-0 flex items-center justify-center p-4 modal-backdrop"
+        style={{ zIndex: 10000 }}
         onClick={onClose}
       >
         <motion.div
@@ -55,24 +55,23 @@ export default function YearModal({
             {/* Close button */}
             <button
               onClick={onClose}
-              className="absolute top-3 right-3 w-8 h-8 rounded-full flex items-center justify-center hover:scale-110 transition-transform text-lg"
-              style={{ backgroundColor: winner.color + "15", color: winner.color }}
+              className="absolute top-3 right-3 w-8 h-8 rounded-full flex items-center justify-center hover:scale-110 transition-transform text-lg cursor-pointer"
+              style={{ backgroundColor: winner.color + "15", color: winner.color, zIndex: 10 }}
             >
               &times;
             </button>
 
             {/* Decorations */}
             <div className="flex justify-center gap-2 mb-2 text-xs opacity-60">
-              <span className="animate-twinkle">✨</span>
+              <span className="animate-twinkle">&#10023;</span>
               <span className="animate-twinkle" style={{ animationDelay: "0.5s" }}>
-                🌸
+                &#10047;
               </span>
               <span className="animate-twinkle" style={{ animationDelay: "1s" }}>
-                ✨
+                &#10023;
               </span>
             </div>
 
-            <div className="text-4xl mb-2">{emoji}</div>
             <h2
               className="text-3xl font-extrabold"
               style={{ color: winner.color }}
@@ -80,7 +79,7 @@ export default function YearModal({
               {data.year}
             </h2>
             <p className="text-sm mt-1" style={{ color: winner.color + "99" }}>
-              #{data.edition} Annual Ranking
+              &#10038; {data.edition}th Annual Ranking
             </p>
             {data.totalVotes && (
               <p
@@ -100,7 +99,7 @@ export default function YearModal({
                 style={{ backgroundColor: winner.color + "08" }}
               >
                 <div className="flex items-center gap-2 mb-2">
-                  <span className="text-xs">👑</span>
+                  <span className="text-xs" style={{ color: winner.color }}>&#9733;</span>
                   <span
                     className="font-extrabold"
                     style={{ color: winner.color }}
@@ -132,7 +131,7 @@ export default function YearModal({
                   className="text-center text-sm font-bold mb-3"
                   style={{ color: winner.color }}
                 >
-                  Top {data.rankings.length} Rankings
+                  ✧ Top {data.rankings.length} Rankings ✧
                 </p>
                 <SwipeCarousel rankings={data.rankings} />
               </>
@@ -142,7 +141,7 @@ export default function YearModal({
                   className="inline-flex items-center gap-2 px-4 py-2 rounded-full"
                   style={{ backgroundColor: winner.color + "15" }}
                 >
-                  <span>👑</span>
+                  <span style={{ color: winner.color }}>&#9733;</span>
                   <span
                     className="font-extrabold text-lg"
                     style={{ color: winner.color }}
@@ -165,7 +164,7 @@ export default function YearModal({
               color: winner.color + "80",
             }}
           >
-            🎀 サンリオキャラクター大賞 🎀
+            ♡ サンリオキャラクター大賞 ♡
           </div>
         </motion.div>
       </motion.div>

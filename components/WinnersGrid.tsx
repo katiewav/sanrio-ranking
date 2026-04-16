@@ -37,8 +37,8 @@ export default function WinnersGrid() {
                 }}
               >
                 {/* Sparkle decoration */}
-                <span className="absolute top-1 right-1 text-xs opacity-0 group-hover:opacity-100 transition-opacity animate-twinkle">
-                  ✨
+                <span className="absolute top-1.5 right-1.5 text-xs opacity-0 group-hover:opacity-100 transition-opacity animate-twinkle" style={{ color: winner.color }}>
+                  ✧
                 </span>
 
                 {/* Character avatar */}
@@ -87,7 +87,7 @@ export default function WinnersGrid() {
                 </span>
 
                 {/* Crown for winner */}
-                <span className="text-xs">👑</span>
+                <span className="text-xs" style={{ color: winner.color }}>★</span>
 
                 {/* Top 5 indicator */}
                 {hasTop5 && (
@@ -118,8 +118,8 @@ export default function WinnersGrid() {
             1986 &ndash; 2025 &middot; 40 years of rankings &middot; click any
             card to explore
           </p>
-          <p className="mt-2 text-lg">
-            🎀 ✨ 🌸
+          <p className="mt-2 text-lg" style={{ color: "#D4A0C9" }}>
+            ♡ ✧ ✿
           </p>
         </div>
       </div>
